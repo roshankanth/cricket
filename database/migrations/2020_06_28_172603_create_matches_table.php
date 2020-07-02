@@ -19,8 +19,9 @@ class CreateMatchesTable extends Migration
              $table->timestamp('start_at');
              $table->unsignedBigInteger('from_team_id');
              $table->unsignedBigInteger('to_team_id');
-             $table->decimal('from_team_score')->default('0.00');
-             $table->decimal('to_team_score')->default('0.00');
+             $table->enum('type',['T20','ODI','TEST']);
+             $table->enum('is_complete',['yes','no'])->default('no');
+             $table->string('place');
              $table->foreign('from_team_id')->references('id')->on('teams');
              $table->foreign('to_team_id')->references('id')->on('teams');
              $table->timestamps();

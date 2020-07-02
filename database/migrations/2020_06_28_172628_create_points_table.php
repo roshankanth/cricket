@@ -18,6 +18,7 @@ class CreatePointsTable extends Migration
             $table->unsignedBigInteger('match_id');
             $table->unsignedBigInteger('team_id');
             $table->decimal('point')->default('0.00');
+            $table->integer('score')->default(0);
              $table->foreign('match_id')->references('id')->on('matches');
              $table->foreign('team_id')->references('id')->on('teams');
             $table->timestamps();

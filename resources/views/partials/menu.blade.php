@@ -33,6 +33,17 @@
                             </p>
                         </a>
                     </li>
+
+                     <li class="nav-item">
+                        <a href="{{ route("admin.fixtures.index") }}" class="nav-link {{ request()->is('admin/fixtures') || request()->is('admin/fixtures/*') ? 'active' : '' }}">
+                            <i class="fas fa-gamepad">
+
+                            </i>
+                            <p>
+                                <span>Fixtures</span>
+                            </p>
+                        </a>
+                    </li>
               
                
                 <li class="nav-item">

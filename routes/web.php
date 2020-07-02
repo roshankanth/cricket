@@ -18,6 +18,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
    
     Route::resource('teams', 'TeamsController');
     Route::post('teams/search', 'TeamsController@search')->name('teams.search');
+    Route::resource('fixtures', 'MatchController');
+    
+    Route::post('fixtures/search', 'MatchController@search')->name('fixtures.search');
     
   
 });

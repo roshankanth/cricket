@@ -19,8 +19,13 @@ class CreatePlayersTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('image_uri');
             $table->string('tshirt_no');
+            $table->enum('type',['batsman','bowler','all']);
+            $table->enum('arm_type',['left','right']);
+            $table->enum('is_captain',['yes','no']);
+            $table->enum('is_vicecaptain',['yes','no']);
+            $table->enum('is_skeepar',['yes','no']);
             $table->unsignedBigInteger('team_id');
-             $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')->on('teams');
             $table->timestamps();
         });
     }
